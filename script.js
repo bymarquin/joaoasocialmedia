@@ -16,7 +16,9 @@ const profile = {
   projects: [
     {
       title: "Campanha para negócio local",
-      description: "Anúncio vertical com abertura forte e ritmo de retenção para gerar mais cliques e conversas no WhatsApp.",
+      challenge: "Pouca resposta nos anúncios curtos.",
+      delivery: "Reel com gancho em 2s e edição dinâmica.",
+      result: "Mais cliques e mais conversas no WhatsApp.",
       linkLabel: "Assistir",
       linkUrl: "https://www.behance.net/javideomakeredit",
       meta: "Reel 00:27",
@@ -24,7 +26,9 @@ const profile = {
     },
     {
       title: "Reels de autoridade",
-      description: "Conteúdo recorrente para fortalecer posicionamento, transmitir confiança e manter presença com padrão visual.",
+      challenge: "Marca pessoal sem consistência visual.",
+      delivery: "Série semanal com padrão de narrativa e edição.",
+      result: "Posicionamento mais claro e retenção melhor.",
       linkLabel: "Ver projeto",
       linkUrl: "https://www.instagram.com/j.a_mobile?igsh=eGpkaHlxZWFuYmZj&utm_source=qr",
       meta: "Social 00:18",
@@ -32,7 +36,9 @@ const profile = {
     },
     {
       title: "Cobertura de evento",
-      description: "Aftermovie com narrativa emocional para valorizar experiência, reforçar marca e aumentar percepção de valor.",
+      challenge: "Registrar evento sem perder emoção.",
+      delivery: "Aftermovie com trilha, ritmo e finalização limpa.",
+      result: "Conteúdo com maior percepção de valor da marca.",
       linkLabel: "Ver teaser",
       linkUrl: "https://www.linkedin.com/in/jo%C3%A3o-ant%C3%B4nio-rodrigues-pereira-68165b3b3",
       meta: "Event 00:42",
@@ -40,7 +46,9 @@ const profile = {
     },
     {
       title: "Pacote mensal de conteúdo",
-      description: "Produção contínua para manter frequência, evitar improviso e sustentar crescimento nas redes sociais.",
+      challenge: "Falta de frequência e calendário de posts.",
+      delivery: "Pacote mensal de vídeos curtos em lote.",
+      result: "Presença constante e operação mais previsível.",
       linkLabel: "Ver entrega",
       linkUrl: "https://wa.me/+5588992737269",
       meta: "Retainer",
@@ -84,6 +92,11 @@ const profile = {
         "O vídeo valorizou nossa marca sem perder nossa identidade.",
       author: "Serviço regional | Vídeos de posicionamento"
     }
+  ],
+  stats: [
+    { value: "+120", label: "vídeos entregues" },
+    { value: "48h", label: "prazo médio por peça curta" },
+    { value: "100%", label: "entregas no formato correto" }
   ],
   story: [
     {
@@ -136,12 +149,16 @@ const projects = document.getElementById("projects");
 const services = document.getElementById("services");
 const processSteps = document.getElementById("processSteps");
 const testimonials = document.getElementById("testimonials");
+const stats = document.getElementById("stats");
 const contactLinks = document.getElementById("contactLinks");
 const storySlides = document.getElementById("storySlides");
 const mainCta = document.getElementById("mainCta");
 const secondaryCta = document.getElementById("secondaryCta");
 const mobileFab = document.getElementById("mobileFab");
 const topbar = document.getElementById("topbar");
+const topnav = document.getElementById("topnav");
+const menuToggle = document.getElementById("menuToggle");
+const headerCta = document.getElementById("headerCta");
 
 headline.textContent = profile.headline;
 subheadline.textContent = profile.subheadline;
@@ -154,6 +171,7 @@ mainCta.innerHTML = `<i data-lucide="clapperboard" class="icon" aria-hidden="tru
 secondaryCta.href = profile.cta.whatsapp.url;
 secondaryCta.innerHTML = `<i data-lucide="message-circle" class="icon" aria-hidden="true"></i>${profile.cta.whatsapp.label}`;
 mobileFab.href = profile.cta.whatsapp.url;
+headerCta.href = profile.cta.whatsapp.url;
 
 profile.projects.forEach((item) => {
   const card = document.createElement("article");
@@ -162,11 +180,22 @@ profile.projects.forEach((item) => {
     <div>
       <h3>${item.title}</h3>
       <span class="project-meta">${item.meta}</span>
-      <p>${item.description}</p>
+      <ul class="project-lines">
+        <li><b>Desafio:</b> ${item.challenge}</li>
+        <li><b>Entrega:</b> ${item.delivery}</li>
+        <li><b>Resultado:</b> ${item.result}</li>
+      </ul>
     </div>
     <a href="${item.linkUrl}" target="_blank" rel="noopener noreferrer">${item.linkLabel} <i data-lucide="arrow-up-right" class="icon" aria-hidden="true"></i></a>
   `;
   projects.appendChild(card);
+});
+
+profile.stats.forEach((item) => {
+  const card = document.createElement("article");
+  card.className = "stat";
+  card.innerHTML = `<strong>${item.value}</strong><span>${item.label}</span>`;
+  stats.appendChild(card);
 });
 
 profile.services.forEach((service) => {
@@ -296,6 +325,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         easing: (t) => 1 - Math.pow(1 - t, 3)
       });
     }
+  });
+});
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = topbar.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+topnav.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", () => {
+    topbar.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
   });
 });
 
