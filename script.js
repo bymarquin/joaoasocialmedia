@@ -140,6 +140,7 @@ const contactLinks = document.getElementById("contactLinks");
 const storySlides = document.getElementById("storySlides");
 const mainCta = document.getElementById("mainCta");
 const secondaryCta = document.getElementById("secondaryCta");
+const mobileFab = document.getElementById("mobileFab");
 const topbar = document.getElementById("topbar");
 
 headline.textContent = profile.headline;
@@ -152,6 +153,7 @@ mainCta.href = profile.cta.portfolio.url;
 mainCta.innerHTML = `<i data-lucide="clapperboard" class="icon" aria-hidden="true"></i>${profile.cta.portfolio.label}`;
 secondaryCta.href = profile.cta.whatsapp.url;
 secondaryCta.innerHTML = `<i data-lucide="message-circle" class="icon" aria-hidden="true"></i>${profile.cta.whatsapp.label}`;
+mobileFab.href = profile.cta.whatsapp.url;
 
 profile.projects.forEach((item) => {
   const card = document.createElement("article");
