@@ -408,8 +408,8 @@ if (window.gsap && !reducedMotion) {
       storyTl.fromTo(nextInner, { opacity: 0, y: 14 }, { opacity: 1, y: 0, stagger: 0.048, duration: 0.34 }, i);
     });
   } else {
-    gsap.set(".story-slide", { clearProps: "all" });
-    gsap.set(".story-slide", { opacity: 1, y: 0, scale: 1, position: "relative", inset: "auto" });
+    gsap.set(".story-slide", { clearProps: "opacity,transform,filter" });
+    gsap.set(".story-slide", { opacity: 1, y: 0, scale: 1 });
     gsap.set(".story-slide h3, .story-slide p, .story-kicker", { opacity: 1, y: 0 });
   }
 }
