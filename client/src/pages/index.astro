@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.astro';
+import Cursor from '../components/Cursor.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Services from '../components/Services.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout>
+	<Cursor />
+	<Preloader />
+	<Header />
+	<main>
+		<Hero />
+		<About />
+		<Portfolio />
+		<Services />
+		<Contact />
+	</main>
+</Layout>
