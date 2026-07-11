@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Media — Estratégia Digital, Gestão de Redes & Tráfego Pago</title>
-<meta name="description" content="Estratégia digital para marcas que precisam posicionar, atrair e vender mais. Gestão de redes sociais, produção de vídeo e tráfego pago.">
+<title>João Social Media | Gestão de Redes Sociais, Vídeo e Tráfego Pago em Araripe-CE</title>
+<meta name="description" content="Gestão de redes sociais, produção de vídeo e tráfego pago para marcas que querem vender de verdade. Atendimento em Araripe-CE e região. Agende uma reunião gratuita.">
+<meta name="keywords" content="social media, gestão de redes sociais, tráfego pago, marketing digital, video maker, agência de marketing, Araripe, Ceará">
+<meta name="author" content="João Social Media">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://joaoasocialmedia.com.br/">
+
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joaoasocialmedia.com.br/">
+<meta property="og:title" content="João Social Media | Presença Digital. Resultado Real.">
+<meta property="og:description" content="Gestão de redes sociais, produção de vídeo e tráfego pago para marcas que querem vender de verdade. Atendimento em Araripe-CE e região.">
+<meta property="og:image" content="https://joaoasocialmedia.com.br/assets/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="João Social Media">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="João Social Media | Presença Digital. Resultado Real.">
+<meta name="twitter:description" content="Gestão de redes sociais, produção de vídeo e tráfego pago para marcas que querem vender de verdade.">
+<meta name="twitter:image" content="https://joaoasocialmedia.com.br/assets/images/og-cover.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/fundador-foto-02-bracos-cruzados.webp" fetchpriority="high">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "João Social Media",
+  "image": "https://joaoasocialmedia.com.br/assets/images/og-cover.jpg",
+  "url": "https://joaoasocialmedia.com.br/",
+  "telephone": "+5588992737269",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Araripe",
+    "addressRegion": "CE",
+    "addressCountry": "BR"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Ceará"
+  },
+  "sameAs": [
+    "https://www.instagram.com/j.a_mobile/"
+  ],
+  "description": "Gestão de redes sociais, produção de vídeo e tráfego pago para marcas que querem posicionar, atrair e vender mais."
+}
+</script>
+
 <style>
   :root {
     --bg: #0a0a0a;
@@ -265,8 +315,8 @@
     flex: 0 0 auto;
     width: clamp(280px, 34vw, 460px);
     aspect-ratio: 4 / 5;
-    opacity: 0;
-    animation: rise 1.2s var(--ease) 0.3s forwards;
+    opacity: 1;
+    animation: riseSolid 1.2s var(--ease) 0.3s backwards;
   }
   .hero-photo::before {
     content: '';
@@ -304,6 +354,7 @@
   }
 
   @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes riseSolid { from { transform: translateY(18px); } to { transform: translateY(0); } }
 
   .scroll-cue {
     position: absolute;
@@ -349,11 +400,12 @@
   .section-head.center p { margin-left: auto; margin-right: auto; max-width: 560px; }
 
   .reveal {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(36px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    transition: transform 0.9s var(--ease);
   }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal.in-view { transform: translateY(0); }
+  .no-js .reveal { transform: none; }
   .reveal[data-delay="1"] { transition-delay: 0.08s; }
   .reveal[data-delay="2"] { transition-delay: 0.16s; }
   .reveal[data-delay="3"] { transition-delay: 0.24s; }
@@ -376,7 +428,6 @@
     aspect-ratio: 4 / 5;
     align-self: center;
     position: relative;
-    opacity: 0;
   }
   .problem-visual img {
     width: 100%;
@@ -989,7 +1040,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/images/fundador-foto-02-bracos-cruzados.png" alt="João, fundador da Social Media" loading="eager">
+      <img src="assets/images/fundador-foto-02-bracos-cruzados.webp" alt="João, fundador da Social Media" loading="eager" decoding="async" fetchpriority="high">
     </div>
   </div>
   <div class="scroll-cue"><span class="line"></span> Scroll</div>
@@ -1018,7 +1069,7 @@
       </div>
     </div>
     <div class="problem-visual reveal" data-delay="1">
-      <img src="assets/images/invisivel-digital.png" alt="Silhueta se dissolvendo em pixels, representando uma marca invisível no digital" loading="lazy">
+      <img src="assets/images/invisivel-digital.webp" alt="Silhueta se dissolvendo em pixels, representando uma marca invisível no digital" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -1114,19 +1165,19 @@
       <div class="case-images">
         <div class="case-proof" style="aspect-ratio: 886 / 1920; flex-grow: 46;">
           <span class="badge">Depoimento</span>
-          <video class="case-media" src="assets/videos/IMG_0666-depoimento-docellita.MOV" controls playsinline preload="metadata" poster="assets/images/depoimento-geral-05.png"></video>
+          <video class="case-media" src="assets/videos/IMG_0666-depoimento-docellita.mp4" controls playsinline preload="metadata" poster="assets/images/depoimento-geral-05.webp"></video>
         </div>
         <div class="case-proof" style="aspect-ratio: 2658 / 1463; flex-grow: 182;">
           <span class="stage before">Antes</span>
-          <img class="case-media" src="assets/images/docellita-perfil-antes.png" alt="Perfil da Docellita antes: 2 posts e 71 seguidores" loading="lazy">
+          <img class="case-media" src="assets/images/docellita-perfil-antes.webp" alt="Perfil da Docellita antes: 2 posts e 71 seguidores" loading="lazy" decoding="async">
         </div>
         <div class="case-proof" style="aspect-ratio: 1179 / 778; flex-grow: 152;">
           <span class="stage after">Depois</span>
-          <img class="case-media" src="assets/images/docellita-perfil-depois.png" alt="Perfil da Docellita depois: 38 posts e 181 seguidores" loading="lazy">
+          <img class="case-media" src="assets/images/docellita-perfil-depois.webp" alt="Perfil da Docellita depois: 38 posts e 181 seguidores" loading="lazy" decoding="async">
         </div>
         <div class="case-proof" style="aspect-ratio: 1179 / 2556; flex-grow: 46;">
           <span class="stage after">Depois</span>
-          <img class="case-media" src="assets/images/docellita-grid-posts-depois.png" alt="Grid de posts da Docellita após a gestão" loading="lazy">
+          <img class="case-media" src="assets/images/docellita-grid-posts-depois.webp" alt="Grid de posts da Docellita após a gestão" loading="lazy" decoding="async">
         </div>
       </div>
       <div>
@@ -1154,10 +1205,10 @@
         <h3>Madruga Drinks</h3>
       </div>
       <div class="case-images">
-        <div class="case-proof" style="aspect-ratio: 1658 / 562; flex-grow: 296;"><img class="case-media" src="assets/images/madruga-drinks-perfil.png" alt="Perfil da Madruga Drinks no Instagram" loading="lazy"></div>
+        <div class="case-proof" style="aspect-ratio: 1658 / 562; flex-grow: 296;"><img class="case-media" src="assets/images/madruga-drinks-perfil.webp" alt="Perfil da Madruga Drinks no Instagram" loading="lazy" decoding="async"></div>
         <div class="case-proof" style="aspect-ratio: 1180 / 1318; flex-grow: 90;">
           <span class="badge">Depoimento</span>
-          <video class="case-media" src="assets/videos/IMG_0668-depoimento-madruga-drinks.MP4" controls playsinline preload="metadata"></video>
+          <video class="case-media" src="assets/videos/IMG_0668-depoimento-madruga-drinks.mp4" controls playsinline preload="metadata" poster="assets/images/madruga-drinks-video-poster.webp"></video>
         </div>
       </div>
       <div>
@@ -1179,10 +1230,10 @@
         <h3>Lara e Wilma - Dentistas</h3>
       </div>
       <div class="case-images">
-        <div class="case-proof" style="aspect-ratio: 1230 / 476; flex-grow: 258;"><img class="case-media" src="assets/images/lara-wilma-perfil.png" alt="Perfil de Lara e Wilma Dentistas no Instagram" loading="lazy"></div>
+        <div class="case-proof" style="aspect-ratio: 1230 / 476; flex-grow: 258;"><img class="case-media" src="assets/images/lara-wilma-perfil.webp" alt="Perfil de Lara e Wilma Dentistas no Instagram" loading="lazy" decoding="async"></div>
         <div class="case-proof" style="aspect-ratio: 1180 / 814; flex-grow: 145;">
           <span class="badge">Depoimento</span>
-          <video class="case-media" src="assets/videos/IMG_0672-depoimento-lara-wilma.MP4" controls playsinline preload="metadata"></video>
+          <video class="case-media" src="assets/videos/IMG_0672-depoimento-lara-wilma.mp4" controls playsinline preload="metadata" poster="assets/images/lara-wilma-video-poster.webp"></video>
         </div>
       </div>
       <div>
@@ -1259,11 +1310,11 @@
     </div>
     <div class="testi-carousel reveal" id="testiCarousel">
       <div class="testi-track" id="testiTrack">
-        <div class="testi-ph" style="--ar: 1179 / 479;"><img class="testi-media" src="assets/images/depoimento-geral-01.png" alt="Print de depoimento de cliente" loading="lazy"></div>
-        <div class="testi-ph" style="--ar: 1178 / 354;"><img class="testi-media" src="assets/images/depoimento-geral-02.png" alt="Print de depoimento de cliente" loading="lazy"></div>
-        <div class="testi-ph" style="--ar: 1178 / 310;"><img class="testi-media" src="assets/images/depoimento-geral-03.png" alt="Print de depoimento de cliente" loading="lazy"></div>
-        <div class="testi-ph" style="--ar: 1178 / 328;"><img class="testi-media" src="assets/images/depoimento-geral-04.png" alt="Print de depoimento de cliente" loading="lazy"></div>
-        <div class="testi-ph" style="--ar: 1180 / 356;"><video class="testi-media" src="assets/videos/IMG_0674-depoimento-geral.MP4" controls playsinline preload="metadata"></video></div>
+        <div class="testi-ph" style="--ar: 1179 / 479;"><img class="testi-media" src="assets/images/depoimento-geral-01.webp" alt="Print de depoimento de cliente" loading="lazy" decoding="async"></div>
+        <div class="testi-ph" style="--ar: 1178 / 354;"><img class="testi-media" src="assets/images/depoimento-geral-02.webp" alt="Print de depoimento de cliente" loading="lazy" decoding="async"></div>
+        <div class="testi-ph" style="--ar: 1178 / 310;"><img class="testi-media" src="assets/images/depoimento-geral-03.webp" alt="Print de depoimento de cliente" loading="lazy" decoding="async"></div>
+        <div class="testi-ph" style="--ar: 1178 / 328;"><img class="testi-media" src="assets/images/depoimento-geral-04.webp" alt="Print de depoimento de cliente" loading="lazy" decoding="async"></div>
+        <div class="testi-ph" style="--ar: 1180 / 356;"><video class="testi-media" src="assets/videos/IMG_0674-depoimento-geral.mp4" controls playsinline preload="metadata" poster="assets/images/depoimento-geral-video-poster.webp"></video></div>
       </div>
     </div>
   </div>
@@ -1371,6 +1422,8 @@
 
 <script>
   (function () {
+    document.documentElement.classList.remove('no-js');
+
     // ---- Contato: edite aqui em um único lugar ----
     var WHATSAPP_NUMBER = '5588992737269';
     var WHATSAPP_MESSAGE = 'Oi João, quero marcar uma reunião e dar o próximo passo no meu negócio';
@@ -1399,15 +1452,19 @@
     });
 
     // ---- Reveal on scroll ----
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+    }
 
     // ---- Tabs (Como funciona) ----
     document.querySelectorAll('.tab-btn').forEach(function (btn) {

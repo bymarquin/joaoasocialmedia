@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaoasocialmedia.com.br/sitemap.xml

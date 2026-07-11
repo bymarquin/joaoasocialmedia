@@ -5,3 +5,5 @@ dist/
 .astro/
 assets/images/_originais_sem_corte/
 assets/images/_removidos/
+assets/images/_originais_png/
+assets/videos/_originais_hevc/
